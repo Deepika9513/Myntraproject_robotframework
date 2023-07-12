@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on darwin)" generated="20230712 23:54:31.737" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcases" source="/Users/apple/Documents/Myntraproject_robotframework/TestCases/Testcases.robot">
+<test id="s1-t1" name="Logging into the Myntra Application using mobile number" line="13">
+<kw name="open googlechrome browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>gc</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--disable-notifications")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 23:54:32.090" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<msg timestamp="20230712 23:54:32.092" level="INFO">Executing: /usr/local/lib/python3.11/site-packages/selenium/webdriver/common/macos/selenium-manager --browser chrome --output json</msg>
+<status status="PASS" starttime="20230712 23:54:32.089" endtime="20230712 23:54:34.420"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 23:54:34.421" endtime="20230712 23:54:34.838"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:32.088" endtime="20230712 23:54:34.838"/>
+</kw>
+<kw name="navigate to Myntra" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${myntra_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 23:54:34.839" level="INFO">Opening url 'https://www.myntra.com/'</msg>
+<status status="PASS" starttime="20230712 23:54:34.839" endtime="20230712 23:54:37.425"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:34.838" endtime="20230712 23:54:37.425"/>
+</kw>
+<kw name="Verifying the homepage and navigate to men's section" library="keywords_homepage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:37.425" endtime="20230712 23:54:37.513"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230712 23:54:37.514" level="INFO">Simulating Mouse Over on element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:54:37.513" endtime="20230712 23:54:37.852"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:38.893" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D"&gt;&lt;img src="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230712 23:54:38.893" level="INFO">/usr/local/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py:889: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn(</msg>
+<status status="PASS" starttime="20230712 23:54:37.852" endtime="20230712 23:54:38.893"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:54:38.894" level="INFO">Clicking element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:54:38.893" endtime="20230712 23:54:41.152"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:37.425" endtime="20230712 23:54:41.152"/>
+</kw>
+<kw name="Verifying the discount of the men's page" library="keywords_homepage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${validatefordiscount}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:41.153" endtime="20230712 23:54:41.179"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${validatefordiscount}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230712 23:54:41.180" level="INFO">Simulating Mouse Over on element 'xpath=//a[contains(@href,'70.0%')]//div//picture//img'.</msg>
+<status status="PASS" starttime="20230712 23:54:41.179" endtime="20230712 23:54:41.461"/>
+</kw>
+<kw name="Mouse Down On Image" library="SeleniumLibrary">
+<arg>${validatefordiscount}</arg>
+<doc>Simulates a mouse down event on an image identified by ``locator``.</doc>
+<status status="PASS" starttime="20230712 23:54:41.462" endtime="20230712 23:54:41.779"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:54:46.780" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230712 23:54:41.779" endtime="20230712 23:54:46.780"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${validatefordiscount}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:54:46.781" level="INFO">Clicking element 'xpath=//a[contains(@href,'70.0%')]//div//picture//img'.</msg>
+<status status="PASS" starttime="20230712 23:54:46.780" endtime="20230712 23:54:48.917"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:54:50.919" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 23:54:48.917" endtime="20230712 23:54:50.919"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:41.153" endtime="20230712 23:54:50.920"/>
+</kw>
+<kw name="verifying the different sections on the page" library="keywords_homepage">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:54:53.921" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 23:54:50.921" endtime="20230712 23:54:53.921"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${categories}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:53.922" endtime="20230712 23:54:53.938"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${categories}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:54.358" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Categories%27%29%5D"&gt;&lt;img src="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Categories%27%29%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:53.938" endtime="20230712 23:54:54.358"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${categories}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:54:54.358" endtime="20230712 23:54:54.358"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Brands}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:54.358" endtime="20230712 23:54:54.372"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Brands}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:54:54.373" endtime="20230712 23:54:54.644"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Brands}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:55.088" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Brand%27%29%5D"&gt;&lt;img src="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Brand%27%29%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:54.644" endtime="20230712 23:54:55.088"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Brands}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:54:55.088" endtime="20230712 23:54:55.088"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Price}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:55.088" endtime="20230712 23:54:55.106"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Price}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:54:55.106" endtime="20230712 23:54:55.394"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Price}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:56.026" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Price%27%29%5D"&gt;&lt;img src="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Price%27%29%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:55.394" endtime="20230712 23:54:56.026"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:54:56.026" endtime="20230712 23:54:56.026"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Color}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:54:56.026" endtime="20230712 23:54:56.050"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Color}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:54:56.050" endtime="20230712 23:54:56.330"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Color}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:56.899" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Color%27%29%5D"&gt;&lt;img src="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Color%27%29%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:56.330" endtime="20230712 23:54:56.899"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Color}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:54:56.899" endtime="20230712 23:54:56.899"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${discounts}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:54:56.899" endtime="20230712 23:54:57.231"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${discounts}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:57.869" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Discount%20Range%27%29%5D"&gt;&lt;img src="xpath%3D/%2A%5B%40class%3D%27vertical-filters-header%27%5D%5Bcontains%28text%28%29%2C%27Discount%20Range%27%29%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:57.231" endtime="20230712 23:54:57.870"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${discounts}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:54:57.870" endtime="20230712 23:54:57.870"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:50.920" endtime="20230712 23:54:57.870"/>
+</kw>
+<kw name="Searching for a particular product" library="keywords_homepage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Click_searchbar}</arg>
+<arg>${Click_searchbar_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 23:54:57.874" level="INFO">Typing text 'marvel comics' into text field 'xpath=//input[@placeholder='Search for products, brands and more']'.</msg>
+<status status="PASS" starttime="20230712 23:54:57.872" endtime="20230712 23:54:58.138"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Click_searchbar_value}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:54:58.716" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="marvel%20comics"&gt;&lt;img src="marvel%20comics" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:54:58.138" endtime="20230712 23:54:58.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:54:58.716" level="INFO">Clicking element 'xpath=//*[@class='desktop-submit']'.</msg>
+<status status="PASS" starttime="20230712 23:54:58.716" endtime="20230712 23:55:00.149"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:55:02.149" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 23:55:00.149" endtime="20230712 23:55:02.150"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:02.151" level="INFO">Clicking element 'xpath=(//*[@class='common-customRadio gender-label'])[1]'.</msg>
+<status status="PASS" starttime="20230712 23:55:02.150" endtime="20230712 23:55:02.261"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:55:02.745" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D"&gt;&lt;img src="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:55:02.261" endtime="20230712 23:55:02.745"/>
+</kw>
+<status status="PASS" starttime="20230712 23:54:57.871" endtime="20230712 23:55:02.745"/>
+</kw>
+<kw name="Listing the product and filtering" library="keywords_productpage">
+<kw name="Selecting a particular product" library="keywords_homepage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${First_product}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:02.746" level="INFO">Clicking element 'xpath=(//*[@class='product-productMetaInfo'])[3]'.</msg>
+<status status="PASS" starttime="20230712 23:55:02.746" endtime="20230712 23:55:02.877"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:55:05.879" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 23:55:02.877" endtime="20230712 23:55:05.879"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>new</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230712 23:55:05.879" endtime="20230712 23:55:05.901"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:02.745" endtime="20230712 23:55:05.901"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_price}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:55:05.901" endtime="20230712 23:55:06.592"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price}</var>
+<arg>${Product_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:06.764" level="INFO">${price} = ₹539</msg>
+<status status="PASS" starttime="20230712 23:55:06.592" endtime="20230712 23:55:06.765"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>The Price of the product is ${price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:55:06.765" endtime="20230712 23:55:06.765"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:06.766" level="INFO">Clicking element 'xpath=//*[@class='size-buttons-buttonContainer']//*[contains(text(),'L')]'.</msg>
+<status status="PASS" starttime="20230712 23:55:06.765" endtime="20230712 23:55:07.017"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Product_details}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:55:07.017" endtime="20230712 23:55:07.454"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_details}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:55:07.454" endtime="20230712 23:55:07.465"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text}</var>
+<arg>${Product_details}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:07.497" level="INFO">${Text} = Grey, white &amp; blue T-shirt for men
+Marvel comic printed
+Regular length
+Round neck
+Short, regular sleeves
+Knitted cotton fabric</msg>
+<status status="PASS" starttime="20230712 23:55:07.465" endtime="20230712 23:55:07.497"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>The Product Details are ${Text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:55:07.497" endtime="20230712 23:55:07.498"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Best_offers}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:55:07.498" endtime="20230712 23:55:07.799"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Best_offers}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:55:07.799" endtime="20230712 23:55:07.811"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text1}</var>
+<arg>${Best_offers}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:07.846" level="INFO">${Text1} = BEST OFFERS
+Best Price: Rs. 431
+Applicable on: Orders above Rs. 999 (only on first purchase)
+Coupon code: MYNTRA200
+Coupon Discount: Rs. 108 off (check cart for final savings)
+View Eligible Products
+F...</msg>
+<status status="PASS" starttime="20230712 23:55:07.811" endtime="20230712 23:55:07.846"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>The Best offers overview are ${Text1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:55:07.846" endtime="20230712 23:55:07.846"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:02.745" endtime="20230712 23:55:07.846"/>
+</kw>
+<kw name="Adding the product to the Wishlist" library="keywords_productpage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Click_wishlist}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 23:55:07.848" endtime="20230712 23:55:08.146"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Click_wishlist}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:55:08.147" level="INFO">Clicking element 'xpath=//span[contains(text(),'WISHLIST')]'.</msg>
+<status status="PASS" starttime="20230712 23:55:08.147" endtime="20230712 23:55:10.367"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${loginSignup}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:55:10.367" endtime="20230712 23:55:10.382"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${loginSignup}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 23:55:10.389" level="INFO">Current page contains element 'xpath=//*[@class='welcome-header'][contains(text(),'Login')]'.</msg>
+<status status="PASS" starttime="20230712 23:55:10.383" endtime="20230712 23:55:10.389"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:07.847" endtime="20230712 23:55:10.390"/>
+</kw>
+<kw name="close web browser" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 23:55:10.390" endtime="20230712 23:55:10.849"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:10.390" endtime="20230712 23:55:10.849"/>
+</kw>
+<tag>test1</tag>
+<status status="PASS" starttime="20230712 23:54:32.088" endtime="20230712 23:55:10.849"/>
+</test>
+<test id="s1-t2" name="Add a specific product to the cart" line="23">
+<kw name="open googlechrome browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>gc</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--disable-notifications")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 23:55:10.852" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<msg timestamp="20230712 23:55:10.853" level="INFO">Executing: /usr/local/lib/python3.11/site-packages/selenium/webdriver/common/macos/selenium-manager --browser chrome --output json</msg>
+<status status="PASS" starttime="20230712 23:55:10.851" endtime="20230712 23:55:13.320"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 23:55:13.320" endtime="20230712 23:55:13.730"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:10.851" endtime="20230712 23:55:13.731"/>
+</kw>
+<kw name="navigate to Myntra" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${myntra_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 23:55:13.732" level="INFO">Opening url 'https://www.myntra.com/'</msg>
+<status status="PASS" starttime="20230712 23:55:13.731" endtime="20230712 23:56:32.568"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:13.731" endtime="20230712 23:56:32.568"/>
+</kw>
+<kw name="Verifying the homepage and navigate to men's section" library="keywords_homepage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:32.570" endtime="20230712 23:56:32.609"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230712 23:56:32.610" level="INFO">Simulating Mouse Over on element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:56:32.609" endtime="20230712 23:56:32.918"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:56:34.198" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D"&gt;&lt;img src="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:56:32.918" endtime="20230712 23:56:34.198"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:34.199" level="INFO">Clicking element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:56:34.198" endtime="20230712 23:56:36.172"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:32.569" endtime="20230712 23:56:36.172"/>
+</kw>
+<kw name="Searching for a particular product" library="keywords_homepage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Click_searchbar}</arg>
+<arg>${Click_searchbar_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:36.173" level="INFO">Typing text 'marvel comics' into text field 'xpath=//input[@placeholder='Search for products, brands and more']'.</msg>
+<status status="PASS" starttime="20230712 23:56:36.172" endtime="20230712 23:56:36.586"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Click_searchbar_value}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:56:37.877" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="marvel%20comics"&gt;&lt;img src="marvel%20comics" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:56:36.586" endtime="20230712 23:56:37.877"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:37.877" level="INFO">Clicking element 'xpath=//*[@class='desktop-submit']'.</msg>
+<status status="PASS" starttime="20230712 23:56:37.877" endtime="20230712 23:56:39.726"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:56:41.727" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 23:56:39.726" endtime="20230712 23:56:41.728"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:41.729" level="INFO">Clicking element 'xpath=(//*[@class='common-customRadio gender-label'])[1]'.</msg>
+<status status="PASS" starttime="20230712 23:56:41.728" endtime="20230712 23:56:41.852"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:56:42.358" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D"&gt;&lt;img src="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:56:41.852" endtime="20230712 23:56:42.358"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:36.172" endtime="20230712 23:56:42.358"/>
+</kw>
+<kw name="Add the Product to the Cart" library="keywords_productpage">
+<kw name="Selecting a particular product" library="keywords_homepage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${First_product}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:42.359" level="INFO">Clicking element 'xpath=(//*[@class='product-productMetaInfo'])[3]'.</msg>
+<status status="PASS" starttime="20230712 23:56:42.359" endtime="20230712 23:56:42.472"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:56:45.474" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 23:56:42.472" endtime="20230712 23:56:45.474"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>new</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230712 23:56:45.474" endtime="20230712 23:56:45.628"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:42.359" endtime="20230712 23:56:45.628"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:45.628" endtime="20230712 23:56:45.745"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:45.747" level="INFO">Clicking element 'xpath=//*[@class='size-buttons-buttonContainer']//*[contains(text(),'L')]'.</msg>
+<status status="PASS" starttime="20230712 23:56:45.745" endtime="20230712 23:56:46.124"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:46.124" endtime="20230712 23:56:46.159"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:46.160" level="INFO">Clicking element 'xpath=//*[contains(text(),'ADD TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:56:46.159" endtime="20230712 23:56:46.330"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Bag_card_badge}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:46.331" endtime="20230712 23:56:46.837"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:46.837" endtime="20230712 23:56:46.853"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:46.854" level="INFO">Clicking element 'xpath=//*[contains(text(),'GO TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:56:46.853" endtime="20230712 23:56:50.111"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:42.358" endtime="20230712 23:56:50.111"/>
+</kw>
+<kw name="close web browser" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 23:56:50.112" endtime="20230712 23:56:50.466"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:50.111" endtime="20230712 23:56:50.466"/>
+</kw>
+<status status="PASS" starttime="20230712 23:55:10.850" endtime="20230712 23:56:50.466"/>
+</test>
+<test id="s1-t3" name="In Myntra Navigate to Cart and Verify the Product" line="29">
+<kw name="open googlechrome browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>gc</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--disable-notifications")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 23:56:50.470" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<msg timestamp="20230712 23:56:50.471" level="INFO">Executing: /usr/local/lib/python3.11/site-packages/selenium/webdriver/common/macos/selenium-manager --browser chrome --output json</msg>
+<status status="PASS" starttime="20230712 23:56:50.469" endtime="20230712 23:56:52.759"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 23:56:52.760" endtime="20230712 23:56:53.176"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:50.469" endtime="20230712 23:56:53.176"/>
+</kw>
+<kw name="navigate to Myntra" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${myntra_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 23:56:53.177" level="INFO">Opening url 'https://www.myntra.com/'</msg>
+<status status="PASS" starttime="20230712 23:56:53.177" endtime="20230712 23:56:58.095"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:53.176" endtime="20230712 23:56:58.095"/>
+</kw>
+<kw name="Verifying the homepage and navigate to men's section" library="keywords_homepage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:56:58.096" endtime="20230712 23:56:58.139"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230712 23:56:58.140" level="INFO">Simulating Mouse Over on element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:56:58.139" endtime="20230712 23:56:58.423"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:56:59.743" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D"&gt;&lt;img src="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:56:58.423" endtime="20230712 23:56:59.743"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:56:59.743" level="INFO">Clicking element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:56:59.743" endtime="20230712 23:57:01.777"/>
+</kw>
+<status status="PASS" starttime="20230712 23:56:58.095" endtime="20230712 23:57:01.777"/>
+</kw>
+<kw name="Searching for a particular product" library="keywords_homepage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Click_searchbar}</arg>
+<arg>${Click_searchbar_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:01.779" level="INFO">Typing text 'marvel comics' into text field 'xpath=//input[@placeholder='Search for products, brands and more']'.</msg>
+<status status="PASS" starttime="20230712 23:57:01.778" endtime="20230712 23:57:02.186"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Click_searchbar_value}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:03.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="marvel%20comics"&gt;&lt;img src="marvel%20comics" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:02.186" endtime="20230712 23:57:03.471"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:03.471" level="INFO">Clicking element 'xpath=//*[@class='desktop-submit']'.</msg>
+<status status="PASS" starttime="20230712 23:57:03.471" endtime="20230712 23:57:05.611"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:57:07.613" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 23:57:05.611" endtime="20230712 23:57:07.614"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:07.615" level="INFO">Clicking element 'xpath=(//*[@class='common-customRadio gender-label'])[1]'.</msg>
+<status status="PASS" starttime="20230712 23:57:07.614" endtime="20230712 23:57:07.730"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:08.213" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D"&gt;&lt;img src="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:07.730" endtime="20230712 23:57:08.213"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:01.778" endtime="20230712 23:57:08.213"/>
+</kw>
+<kw name="Add the Product to the Cart" library="keywords_productpage">
+<kw name="Selecting a particular product" library="keywords_homepage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${First_product}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:08.214" level="INFO">Clicking element 'xpath=(//*[@class='product-productMetaInfo'])[3]'.</msg>
+<status status="PASS" starttime="20230712 23:57:08.214" endtime="20230712 23:57:08.366"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:57:11.367" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 23:57:08.366" endtime="20230712 23:57:11.367"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>new</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230712 23:57:11.368" endtime="20230712 23:57:11.417"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:08.214" endtime="20230712 23:57:11.417"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:11.417" endtime="20230712 23:57:11.688"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:11.689" level="INFO">Clicking element 'xpath=//*[@class='size-buttons-buttonContainer']//*[contains(text(),'L')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:11.688" endtime="20230712 23:57:11.945"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:11.945" endtime="20230712 23:57:11.962"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:11.963" level="INFO">Clicking element 'xpath=//*[contains(text(),'ADD TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:11.962" endtime="20230712 23:57:12.160"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Bag_card_badge}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:12.160" endtime="20230712 23:57:12.458"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:12.459" endtime="20230712 23:57:12.472"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:12.473" level="INFO">Clicking element 'xpath=//*[contains(text(),'GO TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:12.472" endtime="20230712 23:57:15.150"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:08.214" endtime="20230712 23:57:15.150"/>
+</kw>
+<kw name="close web browser" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 23:57:15.151" endtime="20230712 23:57:15.637"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:15.150" endtime="20230712 23:57:15.637"/>
+</kw>
+<tag>test</tag>
+<status status="PASS" starttime="20230712 23:56:50.468" endtime="20230712 23:57:15.638"/>
+</test>
+<test id="s1-t4" name="In Myntra after Adding Product Clear the Cart" line="36">
+<kw name="open googlechrome browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>gc</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--disable-notifications")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 23:57:15.640" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<msg timestamp="20230712 23:57:15.641" level="INFO">Executing: /usr/local/lib/python3.11/site-packages/selenium/webdriver/common/macos/selenium-manager --browser chrome --output json</msg>
+<status status="PASS" starttime="20230712 23:57:15.640" endtime="20230712 23:57:17.861"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 23:57:17.862" endtime="20230712 23:57:18.273"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:15.639" endtime="20230712 23:57:18.273"/>
+</kw>
+<kw name="navigate to Myntra" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${myntra_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 23:57:18.274" level="INFO">Opening url 'https://www.myntra.com/'</msg>
+<status status="PASS" starttime="20230712 23:57:18.274" endtime="20230712 23:57:22.378"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:18.273" endtime="20230712 23:57:22.378"/>
+</kw>
+<kw name="Verifying the homepage and navigate to men's section" library="keywords_homepage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:22.379" endtime="20230712 23:57:22.413"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230712 23:57:22.413" level="INFO">Simulating Mouse Over on element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:57:22.413" endtime="20230712 23:57:22.716"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:24.035" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D"&gt;&lt;img src="xpath%3D/a%5B%40href%3D%27/shop/men%27%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:22.716" endtime="20230712 23:57:24.035"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Mens_section}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:24.036" level="INFO">Clicking element 'xpath=//a[@href='/shop/men']'.</msg>
+<status status="PASS" starttime="20230712 23:57:24.035" endtime="20230712 23:57:26.064"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:22.379" endtime="20230712 23:57:26.064"/>
+</kw>
+<kw name="Searching for a particular product" library="keywords_homepage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Click_searchbar}</arg>
+<arg>${Click_searchbar_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:26.066" level="INFO">Typing text 'marvel comics' into text field 'xpath=//input[@placeholder='Search for products, brands and more']'.</msg>
+<status status="PASS" starttime="20230712 23:57:26.065" endtime="20230712 23:57:26.517"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Click_searchbar_value}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:27.796" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="marvel%20comics"&gt;&lt;img src="marvel%20comics" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:26.517" endtime="20230712 23:57:27.796"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:27.797" level="INFO">Clicking element 'xpath=//*[@class='desktop-submit']'.</msg>
+<status status="PASS" starttime="20230712 23:57:27.796" endtime="20230712 23:57:29.227"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:57:31.228" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 23:57:29.227" endtime="20230712 23:57:31.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:31.229" level="INFO">Clicking element 'xpath=(//*[@class='common-customRadio gender-label'])[1]'.</msg>
+<status status="PASS" starttime="20230712 23:57:31.228" endtime="20230712 23:57:31.356"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${Filter_Men}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:31.851" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D"&gt;&lt;img src="xpath%3D%28/%2A%5B%40class%3D%27common-customRadio%20gender-label%27%5D%29%5B1%5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:31.356" endtime="20230712 23:57:31.851"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:26.065" endtime="20230712 23:57:31.851"/>
+</kw>
+<kw name="Add the Product to the Cart" library="keywords_productpage">
+<kw name="Selecting a particular product" library="keywords_homepage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${First_product}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:31.852" level="INFO">Clicking element 'xpath=(//*[@class='product-productMetaInfo'])[3]'.</msg>
+<status status="PASS" starttime="20230712 23:57:31.852" endtime="20230712 23:57:31.990"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 23:57:34.992" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 23:57:31.990" endtime="20230712 23:57:34.992"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>new</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230712 23:57:34.992" endtime="20230712 23:57:35.016"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:31.852" endtime="20230712 23:57:35.016"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:35.016" endtime="20230712 23:57:35.722"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Product_size}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:35.723" level="INFO">Clicking element 'xpath=//*[@class='size-buttons-buttonContainer']//*[contains(text(),'L')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:35.722" endtime="20230712 23:57:36.057"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:36.058" endtime="20230712 23:57:36.080"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Add_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:36.081" level="INFO">Clicking element 'xpath=//*[contains(text(),'ADD TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:36.080" endtime="20230712 23:57:36.282"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Bag_card_badge}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:36.282" endtime="20230712 23:57:36.568"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:36.568" endtime="20230712 23:57:36.583"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Go_To_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:36.584" level="INFO">Clicking element 'xpath=//*[contains(text(),'GO TO BAG')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:36.583" endtime="20230712 23:57:38.653"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:31.852" endtime="20230712 23:57:38.653"/>
+</kw>
+<kw name="Clear the Cart" library="Keyword_cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${invisible_backdrop}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:38.654" level="INFO">Clicking element 'xpath=//*[@class='itemComponents-base-invisibleBackDrop']'.</msg>
+<status status="PASS" starttime="20230712 23:57:38.653" endtime="20230712 23:57:38.737"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Remove_Button}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:38.738" endtime="20230712 23:57:38.758"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Remove_Button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:38.759" level="INFO">Clicking button 'xpath=//*[@class='inlinebuttonV2-base-actionButton bulkActionStrip-desktopBulkRemove'][contains(text(),'REMOVE')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:38.758" endtime="20230712 23:57:38.978"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Remove_Popup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:38.979" level="INFO">Clicking element 'xpath=//*[@class='inlinebuttonV2-base-actionButton '][contains(text(),'REMOVE')]'.</msg>
+<status status="PASS" starttime="20230712 23:57:38.978" endtime="20230712 23:57:39.149"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:38.653" endtime="20230712 23:57:39.149"/>
+</kw>
+<kw name="Verifying the empty cart" library="Keyword_cart">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Popup_Msg}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:39.150" endtime="20230712 23:57:39.376"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text2}</var>
+<arg>${Popup_Msg}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:39.394" level="INFO">${Text2} = 1 item removed from bag.</msg>
+<status status="PASS" starttime="20230712 23:57:39.376" endtime="20230712 23:57:39.394"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Your bag is Empty ${Text2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 23:57:39.394" endtime="20230712 23:57:39.395"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Display_Emptybag}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 23:57:39.395" endtime="20230712 23:57:39.414"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230712 23:57:39.699" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230712 23:57:39.415" endtime="20230712 23:57:39.699"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Naviback_Logo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 23:57:39.700" level="INFO">Clicking element 'xpath=//*[@class='myntra-logo']'.</msg>
+<status status="PASS" starttime="20230712 23:57:39.700" endtime="20230712 23:57:40.639"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:39.149" endtime="20230712 23:57:40.639"/>
+</kw>
+<kw name="close web browser" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 23:57:40.640" endtime="20230712 23:57:40.945"/>
+</kw>
+<status status="PASS" starttime="20230712 23:57:40.640" endtime="20230712 23:57:40.945"/>
+</kw>
+<tag>clearcart</tag>
+<status status="PASS" starttime="20230712 23:57:15.639" endtime="20230712 23:57:40.945"/>
+</test>
+<status status="PASS" starttime="20230712 23:54:31.738" endtime="20230712 23:57:40.946"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">clearcart</stat>
+<stat pass="1" fail="0" skip="0">test</stat>
+<stat pass="1" fail="0" skip="0">test1</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
